@@ -15,8 +15,12 @@
     <h1>Transações</h1>
     <ul>
     {% for transacao in transacoes %}
-        <li>{{ transacao.descricao }} - {{transacao.dt_transacao}} - {{transacao.valor}}</li>
+        <li><a href="{%url 'url_update' transacao.id%}"> {{ transacao.descricao }} - {{transacao.dt_transacao}}
+            - {{transacao.valor}}</a></li>
     {% endfor %}
     </ul>
+
+    <a href="{%url 'url_nova'%}">Novo</a>
+
 </body>
 </html>
