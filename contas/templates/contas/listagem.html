@@ -11,7 +11,7 @@
         <li>{{ categoria }}</li>
     {% endfor %}
     </ul>
-
+    <a href="{%url 'url_nova_categoria' %}">Nova Categoria</a>
     <h1>Transações</h1>
     <ul>
     {% for transacao in transacoes %}
@@ -20,7 +20,7 @@
     {% endfor %}
     </ul>
 
-    <a href="{%url 'url_nova'%}">Novo</a>
+    <a href="{%url 'url_nova'%}">Nova Transação</a>
 
 </body>
 </html>

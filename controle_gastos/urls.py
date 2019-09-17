@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from contas.views import home, listagem, nova_transacao, update, delete
+from contas.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,5 +23,6 @@ urlpatterns = [
     path('update/<int:pk>/', update, name='url_update'),
     path('delete/<int:pk>/', update, name='url_delete'),
     path('listagem/', listagem, name='url_listagem'),
-    path('contas/form/', nova_transacao, name='url_nova')
+    path('contas/form/', nova_transacao, name='url_nova'),
+    path('contas/form/', nova_categoria, name='url_nova_categoria')
 ]
