@@ -7,5 +7,17 @@
 <body>
     <h1>Seja Bem-Vindo</h1>
     <img src="manip_file.PNG"/>
+
+<!-- Jinja -->
+    <ul>
+    <p>Agora são: {{ now }}</p>
+    {% for transacao in transacoes %}
+        {% if transacao == 't1' %}
+        <li><b>{{transacao}}</b></li>
+        {% else %}
+        <li>{{transacao}}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
 </body>
 </html>
