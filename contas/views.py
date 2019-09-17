@@ -44,7 +44,11 @@ def update(request, pk):
         return redirect('url_listagem')
 
     data['form'] = form
+    data['transacao'] = transacao
     return render(request, 'contas/form.html', data)
     # return render(request, 'contas/form.html', {'form':form})
 
-    return render(request, 'contas/update.html', data)
+def delete(request, pk):
+    transacao = TransacaoForm.objetcs.get(pk=pk)
+    transacao.delete()
+    return redirect('url_listagem')
