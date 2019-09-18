@@ -26,5 +26,5 @@ urlpatterns = [
     path('delete_categoria/<int:pk>/', update_categoria, name='url_delete_categoria'),
     path('listagem/', listagem, name='url_listagem'),
     path('contas/form/', nova_transacao, name='url_nova'),
-    path('contas/form_categoria', nova_categoria, name='url_nova_categoria'),
+    path('contas/form_categoria', nova_categoria, name='url_nova_categoria')
 ]

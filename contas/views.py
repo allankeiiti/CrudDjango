@@ -75,7 +75,7 @@ def update_categoria(request, pk):
 
     data['form'] = form
     data['categoria'] = categoria
-    return render(request, 'contas/form.html', data)
+    return render(request, 'contas/form_categoria.html', data)
 
 
 def delete_categoria(pk):

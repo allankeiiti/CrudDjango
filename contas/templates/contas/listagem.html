@@ -7,8 +7,10 @@
 <body>
     <h1>Categorias</h1>
     <ul>
+        <!--A lista categorias provém do views.py-->
     {% for categoria in categorias %}
-        <li><a href="{%url 'url_update_categoria' categoria.id%}">{{ categoria }}</a></li>
+        <li><a href="{%url 'url_update_categoria' categoria.id %}">{{ categoria.tipo_categoria}} - {{categoria.nome_categoria}}
+            - {{categoria.dt_criacao}}</a></li>
     {% endfor %}
     </ul>
     <a href="{%url 'url_nova_categoria'%}">Nova Categoria</a>
