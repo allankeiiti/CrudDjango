@@ -18,13 +18,13 @@ from django.urls import path
 from contas.views import home, update, listagem, nova_transacao, nova_categoria, update_categoria
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',home),
-    path('update/<int:pk>/', update, name='url_update'),
-    path('delete/<int:pk>/', update, name='url_delete'),
+    path('admin/', admin.site.urls), # OK
+    path('',home), # OK
+    path('update/<int:pk>/', update, name='url_update'), # OK
+    path('delete/<int:pk>/', update, name='url_delete'), # OK
     path('update_categoria/<int:pk>/', update_categoria, name='url_update_categoria'),
     path('delete_categoria/<int:pk>/', update_categoria, name='url_delete_categoria'),
-    path('listagem/', listagem, name='url_listagem'),
-    path('contas/form/', nova_transacao, name='url_nova'),
-    path('contas/form_categoria', nova_categoria, name='url_nova_categoria')
+    path('listagem/', listagem, name='url_listagem'), # OK
+    path('contas/form/', nova_transacao, name='url_nova'), # OK
+    path('contas/form_categoria', nova_categoria, name='url_nova_categoria') # OK
 ]

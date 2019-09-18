@@ -9,7 +9,7 @@
     <ul>
         <!--A lista categorias provém do views.py-->
     {% for categoria in categorias %}
-        <li><a href="{%url 'url_update_categoria' categoria.id %}">{{ categoria.tipo_categoria}} - {{categoria.nome_categoria}}
+        <li><a href="{%url 'url_update_categoria' categoria.pk %}">{{ categoria.tipo_categoria}} - {{categoria.nome_categoria}}
             - {{categoria.dt_criacao}}</a></li>
     {% endfor %}
     </ul>
