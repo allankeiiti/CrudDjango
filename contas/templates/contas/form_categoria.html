@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nova Categoria</title>
+</head>
+<body>
+<form method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+
+    <button type="submit">Salvar</button>
+    {% if categoria %}
+        <a href="{%url 'url_delete' categoria.id%}">Deletar</a>
+    {% endif %}
+</form>
+</body>
+</html>

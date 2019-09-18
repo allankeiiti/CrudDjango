@@ -48,30 +48,27 @@ def update(request, pk):
     return render(request, 'contas/form.html', data)
     # return render(request, 'contas/form.html', {'form':form})
 
-def delete(request, pk):
+def delete(pk):
     transacao = TransacaoForm.objetcs.get(pk=pk)
     transacao.delete()
     return redirect('url_listagem')
 
+# Categoria
 def nova_categoria(request):
     data = {}
     form = CategoriaForm(request.POST or None)
-
-    # Validar o Form
     if form.is_valid():
         form.save()
         return redirect('url_listagem')
 
     data['form'] = form
-    return render(request, 'contas/form.html', data)
-    # return render(request, 'contas/form.html', {'form':form})
+    return render(request, 'contas/form_categoria.html', data)
 
 def update_categoria(request, pk):
     categoria = Categoria.objects.get(pk=pk)
     data = {}
     form = CategoriaForm(request.POST or None, instance=categoria)
 
-    # Validar o Form
     if form.is_valid():
         form.save()
         return redirect('url_listagem')
@@ -79,9 +76,9 @@ def update_categoria(request, pk):
     data['form'] = form
     data['categoria'] = categoria
     return render(request, 'contas/form.html', data)
-    # return render(request, 'contas/form.html', {'form':form})
 
-def delete_categoria(request, pk):
-    categoria = CategoriaForm.objetcs.get(pk=pk)
+
+def delete_categoria(pk):
+    categoria = CategoriaForm.objects.get(pk=pk)
     categoria.delete()
     return redirect('url_listagem')

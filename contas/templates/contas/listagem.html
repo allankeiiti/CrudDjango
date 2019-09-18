@@ -8,10 +8,11 @@
     <h1>Categorias</h1>
     <ul>
     {% for categoria in categorias %}
-        <li>{{ categoria }}</li>
+        <li><a href="{%url 'url_update_categoria' categoria.id%}">{{ categoria }}</a></li>
     {% endfor %}
     </ul>
-    <a href="{%url 'url_nova_categoria' %}">Nova Categoria</a>
+    <a href="{%url 'url_nova_categoria'%}">Nova Categoria</a>
+
     <h1>Transações</h1>
     <ul>
     {% for transacao in transacoes %}
